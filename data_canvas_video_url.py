@@ -124,7 +124,8 @@ def generate_text_diff(transcribed, expected):
 # Usage example
 if __name__ == "__main__":
     url = "https://staging-cdn.videocanvas.co.uk/vc/clefipwu20001qfpikh928ax3/assets/clefipwuf0003qfpi6a4fzwsn-1.mp4"
-    expected_text_file = "expected_text.txt"  # Path to the file containing expected transcription
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    expected_text_file = os.path.join(script_dir, 'expected_text.txt')
     result = transcribe_and_compare(url, expected_text_file)
     #print(result)
     print("\nTranscription Results:")
